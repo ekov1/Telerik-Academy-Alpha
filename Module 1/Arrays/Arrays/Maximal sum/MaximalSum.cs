@@ -5,68 +5,53 @@ public static class MaximalSum
 {
     public static void Main(string[] args)
     {
-        var dimensions = Console.ReadLine()
+        // Read input
+        int[] input = Console.ReadLine()
             .Split(' ')
             .Select(int.Parse)
             .ToArray();
 
-        var x = dimensions[0];
-        var y = dimensions[0];
-        if (x < 3 || y < 3)
-        {
-            return;
-        }
+        int n = input[0];
+        int m = input[1];
+        int[,] matrix = new int[n, m];
 
-        var matrix = new int[x][];
-        for (int i = 0; i < x; i++)
+        for (int row = 0; row < n; row++)
         {
-            matrix[i] = Console.ReadLine()
+            int[] currentLine = Console.ReadLine()
                 .Split(' ')
                 .Select(int.Parse)
                 .ToArray();
-        }
 
-        var bestSum = int.MinValue;
-        var currentSum = 0;
-        for (int row = 0; row < x; row++)
-        {
-            for (int col = 0; col < y; col++)
+            for (int i = 0; i < currentLine.Length; i++)
             {
-                try
-                {
-                    currentSum += matrix[row][col];
-
-                    currentSum += matrix[row + 1][col];
-
-                    currentSum += matrix[row][col + 1];
-
-                    currentSum += matrix[row - 1][col];
-
-                    currentSum += matrix[row][col - 1];
-
-                    currentSum += matrix[row + 1][col + 1];
-
-                    currentSum += matrix[row - 1][col - 1];
-
-                    currentSum += matrix[row + 1][col - 1];
-
-                    currentSum += matrix[row - 1][col + 1];
-                }
-                catch (Exception)
-                {
-                    currentSum = 0;
-                    continue;
-                }
-
-                if (currentSum > bestSum)
-                {
-                    bestSum = currentSum;
-                }
-
-                currentSum = 0;
+                matrix[row, i] = currentLine[i];
             }
         }
 
-        Console.WriteLine(bestSum);
+        // Find sum
+        int maxSum = int.MinValue;
+        int currentSum = 0;
+
+        for (int row = 0; row < matrix.GetLength(0) - 2; row++)
+        {
+            for (int col = 0; col < matrix.GetLength(1) - 2; col++)
+            {
+                currentSum = matrix[row, col]
+                             + matrix[row, col + 1]
+                             + matrix[row, col + 2]
+                             + matrix[row + 1, col]
+                             + matrix[row + 1, col + 1]
+                             + matrix[row + 1, col + 2]
+                             + matrix[row + 2, col]
+                             + matrix[row + 2, col + 1]
+                             + matrix[row + 2, col + 2];
+                if (currentSum > maxSum)
+                {
+                    maxSum = currentSum;
+                }
+            }
+        }
+
+        Console.WriteLine(maxSum);
     }
 }
