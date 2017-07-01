@@ -1,3 +1,8 @@
+# Merge sort
+
+## Description
+Write a program that sorts an array of integers using the [Merge sort](http://en.wikipedia.org/wiki/Merge_sort) algorithm.
+
 ## Input
 - On the first line you will receive the number **N**
 - On the next **N** lines the numbers of the array will be given
@@ -20,3 +25,4 @@
 
 ## Submission
 - Submit your code [here](http://bgcoder.com/Contests/Practice/Index/464#11)
+

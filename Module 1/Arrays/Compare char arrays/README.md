@@ -1,25 +1,26 @@
-# Maximal sequence
-
-## Description
-Write a program that finds the length of the **maximal sequence** of equal elements in an array of **N** integers.
+# Compare char arrays
+Write a program that compares two `char` arrays lexicographically (letter by letter).
 
 ## Input
-- On the first line you will receive the number **N**
-- On the next **N** lines the numbers of the array will be given
+- On the first line you will receive the first `char` array as a string
+- On the second line you will receive the second `char` array as a string
 
 ## Output
-- Print the length of the **maximal sequence**
+- Print `<` if the first array is lexicographically smaller
+- Print `>` if the second array is lexicographically smaller
+- Print `=` if the arrays are equal
 
 ## Constraints
-- 1 <= **N** <= 1024
+- 1 <= **size of arrays** <= 128
 - Time limit: **0.1s**
 - Memory limit: **16MB**
 
 ## Sample tests
 
-| Input                                                    | Output |
-|:--------------------------------------------------------:|:------:|
-| 10<br>2<br>1<br>1<br>2<br>3<br>3<br>**2<br>2<br>2**<br>1 | 3      |
+| Input | Output |
+|:-----:|:------:|
+| hello<br>halo | > |
+| food<br>food | = |
 
 ## Submission
-- Submit your code [here](http://bgcoder.com/Contests/Practice/Index/464#3)
+- Submit your code [here](http://bgcoder.com/Contests/Practice/Index/464#2)
