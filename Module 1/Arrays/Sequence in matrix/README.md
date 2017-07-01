@@ -1,27 +1,26 @@
-# Remove elements from array
+# Sequence in matrix
 
 ## Description
-Write a program that reads an array of integers and removes from it a minimal number of elements in such a way that the remaining array is sorted in increasing order.
-Print the minimal number of elements that need to be removed in order for the array to become sorted.
+We are given a matrix of strings of size `N x M`. Sequences in the matrix we define as sets of several neighbour elements located on the same line, column or diagonal.
+Write a program that finds the longest sequence of equal strings in the matrix and prints its length.
 
 ## Input
-- On the first line you will receive the number **N**
-- On the next **N** lines the numbers of the array will be given
+- On the first line you will receive the numbers **N** and **M** separated by a single space
+- On the next **N** lines there will be **M** strings separated with spaces - the strings in the matrix
 
 ## Output
-- Print the minimal number of elements that need to be removed
+- Print the length of the longest sequence of equal equal strings in the matrix
 
 ## Constraints
-- 1 <= **N** <= 1024
+- 3 <= **N**, **M** <= 128
 - Time limit: **0.1s**
 - Memory limit: **16MB**
 
 ## Sample tests
 
 | Input | Output |
-|:-----:|:------:|
-| 8<br>**1<br>4<br>3<br>3<br>6<br>3<br>2<br>3** | 3 |
-| 10<br>**14<br>2<br>9<br>8<br>3<br>13<br>17<br>19<br>30<br>1** | 4 |
+|:------|:------:|
+| 6 6<br>92 11 23 42 59 48<br>09 92 23 72 56 14<br>17 63 92 46 85 **95**<br>34 12 52 69 23 **95**<br>26 88 78 71 29 **95**<br>26 34 16 63 39 **95** | 4 |
 
 ## Submission
-- Submit your code [here](http://bgcoder.com/Contests/Practice/Index/464#14)
+- Submit your code [here](http://bgcoder.com/Contests/Practice/Index/466#2)
