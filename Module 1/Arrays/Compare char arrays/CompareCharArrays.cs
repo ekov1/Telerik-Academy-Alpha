@@ -15,7 +15,7 @@ public static class CompareCharArrays
         else
         {
             var array = new [] {arrOne, arrTwo};
-            array = array.OrderBy(x => x).ThenBy(x => x.Length).ToArray();
+            array = array.OrderBy(x => x, StringComparison.Ordinal).ThenBy(x => x.Length).ToArray();
 
             if (array[0] == arrOne)
             {
