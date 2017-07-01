@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{DEB78861-50D3-4473-B1F5-2B88C9AB525A}</ProjectGuid>
+    <ProjectGuid>{EAC6590C-2FE6-47FA-8B3D-00CDAD719F6C}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Maximal_sequence</RootNamespace>
-    <AssemblyName>Maximal sequence</AssemblyName>
+    <RootNamespace>Maximal_increasing_sequence</RootNamespace>
+    <AssemblyName>Maximal increasing sequence</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -42,7 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MaximalSequence.cs" />
+    <Compile Include="MaximalInceasingSequence.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{DEB78861-50D3-4473-B1F5-2B88C9AB525A}</ProjectGuid>
+    <ProjectGuid>{270D3D03-BDEB-4779-A47D-B79DB23B5153}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Maximal_sequence</RootNamespace>
-    <AssemblyName>Maximal sequence</AssemblyName>
+    <RootNamespace>Max_sum</RootNamespace>
+    <AssemblyName>Max sum</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -42,7 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MaximalSequence.cs" />
+    <Compile Include="MaxSum.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
