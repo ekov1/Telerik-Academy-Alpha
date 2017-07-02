@@ -1,3 +1,4 @@
+##Integer Calculations
 
 ## Description
 Write methods to calculate `minimum`, `maximum`, `average`, `sum` and `product` of given set of integer numbers.
