@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26430.13
+VisualStudioVersion = 15.0.26430.12
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fill the matrix", "Fill the matrix\Fill the matrix.csproj", "{C69009F8-0242-406C-A92C-0AE0F310C8AE}"
 EndProject
@@ -38,6 +38,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Prime numbers", "Prime numbers\Prime numbers.csproj", "{70FB8161-7873-4C7D-8A3B-1D724473BCD3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Remove elements from array", "Remove elements from array\Remove elements from array.csproj", "{05D20C15-D81D-4F8E-B5A5-781772996FFB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bishop Path Finder", "Bishop Path Finder\Bishop Path Finder.csproj", "{E83F34DB-9A8C-40F2-A200-3DFBFA126699}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -117,6 +119,10 @@ Global
 		{05D20C15-D81D-4F8E-B5A5-781772996FFB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{05D20C15-D81D-4F8E-B5A5-781772996FFB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{05D20C15-D81D-4F8E-B5A5-781772996FFB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E83F34DB-9A8C-40F2-A200-3DFBFA126699}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E83F34DB-9A8C-40F2-A200-3DFBFA126699}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E83F34DB-9A8C-40F2-A200-3DFBFA126699}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E83F34DB-9A8C-40F2-A200-3DFBFA126699}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
