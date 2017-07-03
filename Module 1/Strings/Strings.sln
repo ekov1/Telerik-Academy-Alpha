@@ -1,13 +1,19 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26430.12
+VisualStudioVersion = 15.0.26430.13
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reverse string", "Reverse string\Reverse string.csproj", "{16F4FB1E-5AF0-45CD-AE51-C54EC083F879}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Correct brackets", "Correct brackets\Correct brackets.csproj", "{7A2ACBBD-55E2-4FA5-A81C-D0B8766DDD61}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sub-string in text", "Sub-string in text\Sub-string in text.csproj", "{F0354A67-214C-45EF-BC1D-AFA76B86663A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Parse tags", "Parse tags\Parse tags.csproj", "{30B33173-6861-47CA-9DF5-A3B4D7C1F15F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "String length", "String length\String length.csproj", "{7F0CC52E-33BC-4813-A18F-B4529763C2DB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Extract sentences", "Extract sentences\Extract sentences.csproj", "{3064D7E5-8B9F-48E1-8A1D-85D132F1A37A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +33,18 @@ Global
 		{F0354A67-214C-45EF-BC1D-AFA76B86663A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F0354A67-214C-45EF-BC1D-AFA76B86663A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F0354A67-214C-45EF-BC1D-AFA76B86663A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{30B33173-6861-47CA-9DF5-A3B4D7C1F15F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30B33173-6861-47CA-9DF5-A3B4D7C1F15F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30B33173-6861-47CA-9DF5-A3B4D7C1F15F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30B33173-6861-47CA-9DF5-A3B4D7C1F15F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7F0CC52E-33BC-4813-A18F-B4529763C2DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F0CC52E-33BC-4813-A18F-B4529763C2DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F0CC52E-33BC-4813-A18F-B4529763C2DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F0CC52E-33BC-4813-A18F-B4529763C2DB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3064D7E5-8B9F-48E1-8A1D-85D132F1A37A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3064D7E5-8B9F-48E1-8A1D-85D132F1A37A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3064D7E5-8B9F-48E1-8A1D-85D132F1A37A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3064D7E5-8B9F-48E1-8A1D-85D132F1A37A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

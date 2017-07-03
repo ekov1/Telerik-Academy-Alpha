@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Text.RegularExpressions;
 
 public static class SubstringInText
 {
@@ -8,15 +7,37 @@ public static class SubstringInText
         var substringToMatch = Console.ReadLine().ToLower();
         var text = Console.ReadLine().ToLower();
 
-        var matcher = new Regex(substringToMatch);
-        var matches = matcher.Matches(text);
-
-        var counter = 0;
-        foreach (Match match in matches)
+        if (substringToMatch.Length > text.Length)
         {
-            counter++;
+            Console.WriteLine(0);
         }
+        else if (substringToMatch == text)
+        {
+            Console.WriteLine(1);
+        }
+        else
+        {
+            var isMatch = true;
+            var counter = 0;
+            for (int i = 0; i < text.Length - substringToMatch.Length + 1; i++)
+            {
+                for (int k = 0; k < substringToMatch.Length; k++)
+                {
+                    if (text[i + k] != substringToMatch[k])
+                    {
+                        isMatch = false;
+                        break;
+                    }
+                }
 
-        Console.WriteLine(counter);
+                if (isMatch)
+                {
+                    counter++;
+                }
+                isMatch = true;
+            }
+
+            Console.WriteLine(counter);
+        }
     }
 }
