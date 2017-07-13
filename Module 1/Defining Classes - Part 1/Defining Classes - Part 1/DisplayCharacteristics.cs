@@ -7,15 +7,15 @@ using System.Threading.Tasks;
 
 public class DisplayCharacteristics
 {
-    private decimal size;
-    private int numberOfColors;
+    private decimal? size;
+    private int? numberOfColors;
 
-    public decimal Size
+    public decimal? Size
     {
         get { return this.size; }
     }
 
-    public int NumberOfColors
+    public int? NumberOfColors
     {
         get { return this.numberOfColors; }
     }
@@ -30,4 +30,3 @@ public class DisplayCharacteristics
         this.numberOfColors = numberOfColors;
     }
 }
-

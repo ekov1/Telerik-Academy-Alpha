@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 public class BatteryCharacteristics
 {
-    private enum BatteryType
+    public enum BatteryType
     {
         LiIon,
         NiMh,
@@ -14,20 +14,20 @@ public class BatteryCharacteristics
     }
 
     private string model;
-    private int hoursIdle;
-    private int hoursTalk;
+    private int? hoursIdle;
+    private int? hoursTalk;
 
     public string Model
     {
         get { return this.model; }
     }
 
-    public int HoursIdle
+    public int? HoursIdle
     {
         get { return this.hoursIdle; }
     }
 
-    public int HoursTalk
+    public int? HoursTalk
     {
         get { return this.hoursTalk; }
     }

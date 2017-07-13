@@ -9,7 +9,7 @@ public class GSM
 {
     private string model;
     private string manufacturer;
-    private decimal price;
+    private decimal? price;
     private string owner;
     private BatteryCharacteristics batteryCharacteristics;
     private DisplayCharacteristics displayCharacteristics;
@@ -24,7 +24,7 @@ public class GSM
         get { return this.manufacturer; }
     }
 
-    public decimal Price
+    public decimal? Price
     {
         get { return this.price; }
     }
