@@ -9,6 +9,8 @@ public class StartUp
 {
     public static void Main(string[] args)
     {
-        GSM IPhone4 = new GSM("iPhone4", );
+        var Engine = new Engine();
+        Engine.AddInput();
+        Engine.PrintPhones();
     }
 }

@@ -72,6 +72,8 @@ public class GSM
         allCharacteristics.AppendLine($"{manufacturer}");
         allCharacteristics.AppendLine("Price:");
         allCharacteristics.AppendLine($"{price}");
+        allCharacteristics.AppendLine("Owner:");
+        allCharacteristics.AppendLine($"{owner}");
         allCharacteristics.AppendLine("-Battery Characteristics-");
         allCharacteristics.AppendLine("Battery Model:");
         allCharacteristics.AppendLine($"{batteryCharacteristics.Model}");
