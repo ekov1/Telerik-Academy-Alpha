@@ -37,11 +37,13 @@ public class GSM
     public BatteryCharacteristics BatteryCharacteristics
     {
         get { return this.batteryCharacteristics; }
+        set { this.batteryCharacteristics = value; }
     }
 
     public DisplayCharacteristics DisplayCharacteristics
     {
         get { return this.displayCharacteristics; }
+        set { this.displayCharacteristics = value; }
     }
 
     public GSM(string model, string manufacturer)
@@ -50,13 +52,13 @@ public class GSM
         this.manufacturer = manufacturer;
     }
 
-    public GSM(string model, string manufacturer, decimal price)
+    public GSM(string model, string manufacturer, decimal? price)
         : this(model, manufacturer)
     {
         this.price = price;
     }
 
-    public GSM(string model, string manufacturer, decimal price, string owner)
+    public GSM(string model, string manufacturer, decimal? price, string owner)
         : this(model, manufacturer, price)
     {
         this.owner = owner;
@@ -75,6 +77,8 @@ public class GSM
         allCharacteristics.AppendLine("Owner:");
         allCharacteristics.AppendLine($"{owner}");
         allCharacteristics.AppendLine("-Battery Characteristics-");
+        allCharacteristics.AppendLine("Battery Type:");
+        allCharacteristics.AppendLine($"{batteryCharacteristics.CurrentBatteryType}");
         allCharacteristics.AppendLine("Battery Model:");
         allCharacteristics.AppendLine($"{batteryCharacteristics.Model}");
         allCharacteristics.AppendLine("Hours Idle:");

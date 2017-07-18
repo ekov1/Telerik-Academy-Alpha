@@ -10,41 +10,42 @@ public class BatteryCharacteristics
     {
         LiIon,
         NiMh,
-        NiCd
+        NiCd,
+        Unknown
     }
 
     private string model;
     private int? hoursIdle;
     private int? hoursTalk;
+    private BatteryType currentBatteryType;
 
     public string Model
     {
         get { return this.model; }
+        set { this.model = value; }
     }
 
     public int? HoursIdle
     {
         get { return this.hoursIdle; }
+        set { this.hoursIdle = value; }
     }
 
     public int? HoursTalk
     {
         get { return this.hoursTalk; }
+        set { this.hoursTalk = value; }
     }
 
-    public BatteryCharacteristics(string model)
+    public BatteryType CurrentBatteryType
     {
-        this.model = model;
+        get { return this.currentBatteryType; }
+        set { this.currentBatteryType = value; }
     }
 
-    public BatteryCharacteristics(string model, int hoursIdle) : this(model)
+    public BatteryCharacteristics(BatteryType CurrentBatteryType)
     {
-        this.hoursIdle = hoursIdle;
-    }
-
-    public BatteryCharacteristics(string model, int hoursIdle, int hoursTalk) : this(model, hoursIdle)
-    {
-        this.hoursTalk = hoursTalk;
+        this.currentBatteryType = CurrentBatteryType;
     }
 }
 
