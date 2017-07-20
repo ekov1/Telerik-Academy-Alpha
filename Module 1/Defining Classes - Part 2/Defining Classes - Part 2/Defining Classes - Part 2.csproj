@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{10738B14-4909-4BE1-A9A0-D22BBC327D51}</ProjectGuid>
+    <ProjectGuid>{21D50C5A-EE29-4FA4-8A3B-93E76D02D1F0}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <RootNamespace>Defining_Classes___Part_2</RootNamespace>
     <AssemblyName>Defining Classes - Part 2</AssemblyName>
@@ -42,6 +42,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Core\DistanceCalculator.cs" />
+    <Compile Include="Core\Engine.cs" />
+    <Compile Include="Entities\Path.cs" />
+    <Compile Include="Entities\PathStorage.cs" />
+    <Compile Include="Entities\Point3D.cs" />
     <Compile Include="StartUp.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

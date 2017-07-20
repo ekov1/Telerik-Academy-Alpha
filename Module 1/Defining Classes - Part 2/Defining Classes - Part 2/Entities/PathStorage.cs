@@ -4,13 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Defining_Classes___Part_2
+namespace Defining_Classes___Part_2.Entities
 {
-    public class StartUp
+    public class PathStorage
     {
-        public static void Main()
-        {
 
-        }
     }
 }
