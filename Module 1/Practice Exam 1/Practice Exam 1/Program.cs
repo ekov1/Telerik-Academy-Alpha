@@ -4,10 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Defining_Classes___Part_2.Core
+namespace Practice_Exam_1
 {
-    public class Engine
+    class Program
     {
-        
+        static void Main(string[] args)
+        {
+        }
     }
 }
