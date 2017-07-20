@@ -59,7 +59,7 @@ public class Engine
 
 
 
-                Console.WriteLine("Enter battery type[Li-Ion, NiMH, NiCd, Unknown]");
+                Console.WriteLine("Enter battery type[Li-Ion, NiMH, NiCd, Unknown]");                  
                 var batteryTypeInput = Console.ReadLine();
                 BatteryCharacteristics batteryCharacteristics = new BatteryCharacteristics(BatteryCharacteristics.BatteryType.Unknown);
 
