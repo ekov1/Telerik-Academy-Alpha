@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace Student_groups
@@ -15,6 +16,7 @@ namespace Student_groups
         private string email;
         private List<int> marks;
         private int groupNumber;
+        private string department;
 
         public string FirstName
         {
@@ -51,8 +53,13 @@ namespace Student_groups
             get { return this.groupNumber; }
         }
 
+        public string Department
+        {
+            get { return this.department; }
+        }
+
         public Student(string firstName, string lastName, string facultyNumber, string telephone, string email,
-            List<int> marks, int groupNumber)
+            List<int> marks, int groupNumber, string deparment)
         {
             this.firstName = firstName;
             this.lastName = lastName;
@@ -61,6 +68,7 @@ namespace Student_groups
             this.email = email;
             this.marks = marks;
             this.groupNumber = groupNumber;
+            this.department = deparment;
         }
     }
 }
