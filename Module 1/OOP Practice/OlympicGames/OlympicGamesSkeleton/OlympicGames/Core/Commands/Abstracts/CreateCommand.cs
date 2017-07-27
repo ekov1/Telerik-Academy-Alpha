@@ -35,15 +35,15 @@ namespace OlympicGames.Core.Commands.Abstracts
                 throw new ArgumentException($"{GlobalConstants.ParametersCountInvalid}");
             }
 
-            var firstName = commandParameters[0];
+            var firstName = commandParameters[0].Trim();
             firstName.ValidateFirstName();
             this.firstName = firstName;
 
-            var lastName = commandParameters[1];
+            var lastName = commandParameters[1].Trim();
             lastName.ValidatLastName();
             this.lastName = lastName;
 
-            var country = commandParameters[2];
+            var country = commandParameters[2].Trim();
             country.ValidatCountry();
             this.country = country;
         }

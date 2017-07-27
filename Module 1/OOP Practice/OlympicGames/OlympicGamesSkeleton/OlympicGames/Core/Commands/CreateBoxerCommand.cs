@@ -26,10 +26,10 @@ namespace OlympicGames.Core.Commands
             //gives category an uppercase
             CultureInfo cultureInfo = Thread.CurrentThread.CurrentCulture;
             TextInfo textInfo = cultureInfo.TextInfo;
-            this.category = textInfo.ToTitleCase(commandParameters[3]);
+            this.category = textInfo.ToTitleCase(commandParameters[3].Trim());
 
             //validates wins
-            var wins = commandParameters[4];
+            var wins = commandParameters[4].Trim();
             foreach (var character in wins)
             {
                 if (!char.IsDigit(character))
@@ -41,7 +41,7 @@ namespace OlympicGames.Core.Commands
             this.wins = int.Parse(wins);
 
             //validates losses
-            var losses = commandParameters[5];
+            var losses = commandParameters[5].Trim();
             foreach (var character in losses)
             {
                 if (!char.IsDigit(character))
