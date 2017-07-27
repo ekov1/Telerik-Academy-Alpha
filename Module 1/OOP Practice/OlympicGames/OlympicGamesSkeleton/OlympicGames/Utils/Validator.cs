@@ -10,7 +10,7 @@ namespace OlympicGames.Utils
             {
                 msg = "Value cannot be null!";
             }
-
+        
             if (value == null)
             {
                 throw new ArgumentNullException(msg);
@@ -18,18 +18,57 @@ namespace OlympicGames.Utils
         }
 
 
-   //     public static void ValidateMinAndMaxNumber(this int value, int min, int max = int.MaxValue - 1, string msg = null)
-   //     {
-   //         if (msg == null)
-   //         {
-   //             msg = string.Format("Value must be between {0} and {1}!", min, max);
-   //         }
-   //
-   //         if (value < min || value > max)
-   //         {
-   //             throw new ArgumentException(msg);
-   //         }
-   //     }
+        public static void ValidateIfNullFirstName(this object value, string msg = null)
+        {
+            if (msg == null)
+            {
+                msg = "First name cannot be null!";
+            }
+
+            if (value == null)
+            {
+                throw new ArgumentNullException(msg);
+            }
+        }
+
+        public static void ValidateIfNullLastName(this object value, string msg = null)
+        {
+            if (msg == null)
+            {
+                msg = "Last name cannot be null!";
+            }
+
+            if (value == null)
+            {
+                throw new ArgumentNullException(msg);
+            }
+        }
+
+        public static void ValidateIfNullCountry(this object value, string msg = null)
+        {
+            if (msg == null)
+            {
+                msg = "Country cannot be null!";
+            }
+
+            if (value == null)
+            {
+                throw new ArgumentNullException(msg);
+            }
+        }
+
+        //     public static void ValidateMinAndMaxNumber(this int value, int min, int max = int.MaxValue - 1, string msg = null)
+        //     {
+        //         if (msg == null)
+        //         {
+        //             msg = string.Format("Value must be between {0} and {1}!", min, max);
+        //         }
+        //
+        //         if (value < min || value > max)
+        //         {
+        //             throw new ArgumentException(msg);
+        //         }
+        //     }
 
         public static void ValidateWins(this int value, string msg = null)
         {

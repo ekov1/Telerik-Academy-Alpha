@@ -37,14 +37,17 @@ namespace OlympicGames.Core.Commands.Abstracts
 
             var firstName = commandParameters[0].Trim();
             firstName.ValidateFirstName();
+            firstName.ValidateIfNull();
             this.firstName = firstName;
 
             var lastName = commandParameters[1].Trim();
             lastName.ValidatLastName();
+            lastName.ValidateIfNull();
             this.lastName = lastName;
 
             var country = commandParameters[2].Trim();
             country.ValidatCountry();
+            country.ValidateIfNull();
             this.country = country;
         }
     }
