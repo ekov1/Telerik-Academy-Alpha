@@ -28,29 +28,23 @@ namespace OlympicGames.Core.Commands
             TextInfo textInfo = cultureInfo.TextInfo;
             this.category = textInfo.ToTitleCase(commandParameters[3].Trim());
 
-            //validates wins
-            var wins = commandParameters[4].Trim();
-            foreach (var character in wins)
+            //valida
+            string wins = commandParameters[4];
+
+            string losses = commandParameters[5];
+
+            int number;
+
+            if (!(int.TryParse(wins, out number) && int.TryParse(losses, out number)))
+
             {
-                if (!char.IsDigit(character))
-                {
-                    throw new ArgumentException($"{GlobalConstants.WinsLossesMustBeNumbers}");
-                }
+                throw new ArgumentException(GlobalConstants.WinsLossesMustBeNumbers);
             }
             int.Parse(wins).ValidateWins();
-            this.wins = int.Parse(wins);
+            this.wins = int.Parse(wins); 
 
-            //validates losses
-            var losses = commandParameters[5].Trim();
-            foreach (var character in losses)
-            {
-                if (!char.IsDigit(character))
-                {
-                    throw new ArgumentException($"{GlobalConstants.WinsLossesMustBeNumbers}");
-                }
-            }
             int.Parse(losses).ValidateLosses();
-            this.losses = int.Parse(losses);          
+            this.losses = int.Parse(losses);
         }
 
         public override string Execute()

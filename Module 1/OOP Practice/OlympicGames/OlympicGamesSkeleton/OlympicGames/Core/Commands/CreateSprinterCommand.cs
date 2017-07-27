@@ -22,7 +22,7 @@ namespace OlympicGames.Core.Commands
             foreach (var record in recordsParams)
             {
                 var recordTokens = record.Split('/');
-
+                
                 records.Add(recordTokens[0], double.Parse(recordTokens[1]));
             }
         }

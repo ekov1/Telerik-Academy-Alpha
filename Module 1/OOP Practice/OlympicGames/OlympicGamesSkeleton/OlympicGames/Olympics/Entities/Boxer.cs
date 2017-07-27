@@ -34,10 +34,10 @@ namespace OlympicGames.Olympics.Entities
 
         public override string ToString()
         {
-            return $@"BOXER: {FirstName} {LastName} from {Country}
-Category: {Category}
-Wins: {wins}
-Losses: {losses}";
+            return $@"BOXER: {base.FirstName} {base.LastName} from {base.Country}
+Category: {this.category}
+Wins: {this.wins}
+Losses: {this.losses}";
         }
     }
 }
