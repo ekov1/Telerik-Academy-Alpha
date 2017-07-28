@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using OlympicGames.Olympics.Contracts;
 using OlympicGames.Olympics.Enums;
@@ -74,6 +76,16 @@ namespace OlympicGames.Model.Entities
             this.category = boxingCategory;
             this.wins = wins;
             this.losses = losses;           
+        }
+
+        public override string ToString()
+        {
+            CultureInfo cultureInfo = Thread.CurrentThread.CurrentCulture;
+            TextInfo textInfo = cultureInfo.TextInfo;
+            return $@"BOXER: {FirstName} {LastName} from {Country}
+Category: {textInfo.ToTitleCase(this.category.ToString())}
+Wins: {wins}
+Losses: {losses}";
         }
     }
 }

@@ -27,5 +27,18 @@ namespace OlympicGames.Model.Entities
 
             this.personalRecords = personalRecords;
         }
+
+        public override string ToString()
+        {
+            var commandOutput = new StringBuilder();
+            commandOutput.AppendLine($"SPRINTER: {FirstName} {LastName} from {Country}");
+            commandOutput.AppendLine($"PERSONAL RECORDS:");
+            foreach (var kvp in personalRecords)
+            {
+                commandOutput.AppendLine($"{kvp.Key}m: {kvp.Value}s");
+            }
+
+            return commandOutput.ToString();
+        }
     }
 }

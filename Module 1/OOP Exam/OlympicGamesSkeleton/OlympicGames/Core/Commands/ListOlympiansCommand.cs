@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
@@ -10,46 +11,72 @@ namespace OlympicGames.Core.Commands
 {
     public class ListOlympiansCommand : Command, ICommand
     {
-        private string key;
-        private string order;
+        private string command;
 
         public ListOlympiansCommand(IList<string> commandParameters)
             : base(commandParameters)
         {
-            commandParameters.ValidateIfNull();
-            this.key = commandParameters[0];
-            this.order = string.Join(" ", commandParameters.Skip(1));
+            if (Committee.Olympians.Count == 0)
+            {
+                Console.Write($"{GlobalConstants.NoOlympiansAdded}");
+            }
+
+            this.command = string.Join(" ", commandParameters);
         }
 
-        // Use it. It works!
+
         public override string Execute()
         {
-            var stringBuilder = new StringBuilder();
-            var sorted = this.Committee.Olympians.ToList();
+            var commandTokens = command.Split(' ').ToArray();
+            var commandOutput = new StringBuilder();
+            var comittes = this.Committee.Olympians.ToList();
 
-            stringBuilder.AppendLine(string.Format(GlobalConstants.SortingTitle, this.key, this.order));
-
-            if (this.order.ToLower().Trim() == "desc")
+            if (comittes.Count == 0)
             {
-                sorted = this.Committee.Olympians.OrderByDescending(x =>
+                
+            }
+            else if (commandTokens.Length == 0)
+            {
+                comittes = comittes.OrderBy(x => x.FirstName).ToList();
+            }
+            else if (commandTokens.Length == 1)
+            {
+                if (commandTokens[0] == "firstname")
                 {
-                    return x.GetType().GetProperties().FirstOrDefault(y => y.Name.ToLower() == this.key.ToLower()).GetValue(x, null);
-                }).ToList();
+                    comittes = comittes.OrderBy(x => x.FirstName).ToList();
+                    commandOutput.AppendLine($"Sorted by [key: firstname] in [order: asc]");
+                }
+                else
+                {
+                    comittes = comittes.OrderBy(x => x.LastName).ToList();
+                    commandOutput.AppendLine("Sorted by [key: lastname] in [order: asc]");
+                }
+            }
+            else if (commandTokens.Length == 2)
+            {
+                if (commandTokens[0] == "firstname")
+                {
+                    comittes = comittes.OrderByDescending(x => x.FirstName).ToList();
+                    commandOutput.AppendLine("Sorted by [key: firstname] in [order: desc]");
+                }
+                else
+                {
+                    comittes = comittes.OrderByDescending(x => x.LastName).ToList();
+                    commandOutput.AppendLine("Sorted by [key: lastname] in [order: desc]");
+                }
             }
             else
             {
-                sorted = this.Committee.Olympians.OrderBy(x =>
-                {
-                    return x.GetType().GetProperties().FirstOrDefault(y => y.Name.ToLower() == this.key.ToLower()).GetValue(x, null);
-                }).ToList();
+                throw new ArgumentException(GlobalConstants.ParametersCountInvalid);
             }
 
-            foreach (var item in sorted)
+            foreach (var olympian in comittes)
             {
-                stringBuilder.AppendLine(item.ToString());
+                commandOutput.AppendLine(olympian.ToString());
             }
 
-            return stringBuilder.ToString();
+            return commandOutput.ToString();
         }
+
     }
 }

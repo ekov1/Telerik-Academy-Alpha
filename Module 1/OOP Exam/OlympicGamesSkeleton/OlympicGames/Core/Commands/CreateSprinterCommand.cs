@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using OlympicGames.Core.Commands.Abstracts;
 using OlympicGames.Core.Contracts;
+using OlympicGames.Core.Factories;
 using OlympicGames.Olympics.Contracts;
 using OlympicGames.Utils;
 
@@ -41,8 +42,9 @@ namespace OlympicGames.Core.Commands
                 records.Add(kvpTokens[0], double.Parse(kvpTokens[1]));
             }
 
-            var commandOutput = new StringBuilder();
+            Committee.Olympians.Add(OlympicsFactory.Instance.CreateSprinter(firstName, lastName, country, records));
 
+            var commandOutput = new StringBuilder();
             commandOutput.AppendLine("Created Sprinter");
             commandOutput.AppendLine($"SPRINTER: {firstName} {lastName} from {country}");
             commandOutput.AppendLine($"PERSONAL RECORDS:");

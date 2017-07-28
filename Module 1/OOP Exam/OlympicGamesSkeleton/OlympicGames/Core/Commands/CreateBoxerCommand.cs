@@ -27,7 +27,7 @@ namespace OlympicGames.Core.Commands
             var commandTokens = command
                 .Split(new char[] {' '}, StringSplitOptions.RemoveEmptyEntries)
                 .ToArray();
-
+            
             var firstName = commandTokens[0];
             firstName.ValidateMinAndMaxLength(2, 20);
             var lastName = commandTokens[1];
@@ -41,14 +41,16 @@ namespace OlympicGames.Core.Commands
             var losses = int.Parse(commandTokens[5]);
             losses.ValidateMinAndMaxNumber(0, 100);
 
-            CultureInfo cultureInfo = Thread.CurrentThread.CurrentCulture;
+            Committee.Olympians.Add(OlympicsFactory.Instance.CreateBoxer(firstName, lastName, country, category, wins, losses));
+
+CultureInfo cultureInfo = Thread.CurrentThread.CurrentCulture;
             TextInfo textInfo = cultureInfo.TextInfo;
             var commandMesssage = $@"Created Boxer
 BOXER: {firstName} {lastName} from {country}
 Category: {textInfo.ToTitleCase(category)}
 Wins: {wins}
 Losses: {losses}";
-            
+
             return commandMesssage;
         }
     }
