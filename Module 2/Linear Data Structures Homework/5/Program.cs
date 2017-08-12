@@ -13,8 +13,8 @@ namespace _5
         public static void Main(string[] args)
         {
             var watch = new Stopwatch();
-            var linkedList = new LinkedList<int>();
-            for (int i = 0; i < 10000000; i++)
+            var linkedList = new LinkedList<long>();
+            for (long i = 0; i < 100000000; i++)
             {
                 if (i % 6 == 0)
                 {
