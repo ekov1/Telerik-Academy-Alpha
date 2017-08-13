@@ -10,7 +10,7 @@ namespace _1
     {
         public static void Main()
         {
-            PrintNestedLoops(5);
+            PrintNestedLoops(3);
         }
 
         private static void PrintNestedLoops(int loopCount)
@@ -20,6 +20,7 @@ namespace _1
 
         private static void IterateNestedLoops(Stack<int> nestedLoops, int currentIteration, int iterationCount)
         {
+
             if (currentIteration == iterationCount)
             {
                 Console.WriteLine(string.Join(" ", nestedLoops.Reverse()));
