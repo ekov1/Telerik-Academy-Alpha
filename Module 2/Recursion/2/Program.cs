@@ -8,7 +8,7 @@ namespace _2
 {
     public class Program
     {
-       private static readonly int[] combinations = new int[N];
+        private static readonly int[] combinations = new int[N];
         private const int N = 3;
         private const int K = 2;
 
@@ -40,6 +40,6 @@ namespace _2
             }
 
             Console.WriteLine();
-}
+        }
     }
 }
