@@ -8,12 +8,7 @@ namespace _2
 {
     public class Program
     {
-<<<<<<< HEAD
         private const int N = 3;
-=======
-        private static readonly int[] combinations = new int[N];
-        private const int N = 7;
->>>>>>> 24d0bc3ba50a96c7cf283889b133763da4317891
         private const int K = 2;
         private static readonly int[] combinations = new int[N];
 
