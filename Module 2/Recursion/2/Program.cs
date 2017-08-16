@@ -8,9 +8,9 @@ namespace _2
 {
     public class Program
     {
-        private static readonly int[] combinations = new int[N];
         private const int N = 3;
         private const int K = 2;
+        private static readonly int[] combinations = new int[N];
 
         public static void Main()
         {

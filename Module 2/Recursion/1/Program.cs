@@ -10,7 +10,7 @@ namespace _1
     {
         public static void Main()
         {
-            PrintNestedLoops(3);
+            PrintNestedLoops(4);
         }
 
         private static void PrintNestedLoops(int loopCount)
