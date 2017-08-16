@@ -4,22 +4,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _2
+namespace _3
 {
-    public class Program
+    class Program
     {
-<<<<<<< HEAD
+        private static readonly int[] combinations = new int[K];
         private const int N = 3;
-=======
-        private static readonly int[] combinations = new int[N];
-        private const int N = 7;
->>>>>>> 24d0bc3ba50a96c7cf283889b133763da4317891
         private const int K = 2;
-        private static readonly int[] combinations = new int[N];
 
         public static void Main()
         {
-            Combinations(0, 0, true);
+            Combinations(0, 0, false);
         }
 
         private static void Combinations(int startValue, int depth, bool withReps)
