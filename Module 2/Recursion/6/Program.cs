@@ -10,14 +10,14 @@ namespace _6
     {
         public static void Main(string[] args)
         {
-            var words = new string[] {"dog", "cat", "fish", "crocodile"};
+            var words = new [] {"dog", "cat", "fish", "crocodile"};
 
             PrintSubSetOfStrings(words, 0);
         }
 
         private static void PrintSubSetOfStrings(string[] words, int k)
         {
-            if (k == words.Length - 1)
+            if (k >= words.Length - 1)
             {
                 return;
             }
