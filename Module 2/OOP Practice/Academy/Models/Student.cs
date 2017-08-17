@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Academy.Models.Contracts;
 using Academy.Models.Enums;
+using Academy.Models.Exceptions;
 using Academy.Models.Utils.Contracts;
 
 namespace Academy.Models
@@ -36,9 +37,51 @@ namespace Academy.Models
 
         public Student(string username, string track)
         {
-            this.Username = username;
+            //username
+            if (string.IsNullOrEmpty(username) || username.Length < 2 || username.Length > 17)
+            {
+                throw new ArgumentException(ExceptionMessages.Username);
+            }
+            this.username = username;
 
-            this.Track = (Track) Enum.Parse(typeof(Track), track);
+            //track
+            Track value;
+            var successfullyParsed = Enum.TryParse(track, out value);
+            if (successfullyParsed)
+            {
+                this.track = value;
+            }
+            else
+            {
+                throw new ArgumentException(ExceptionMessages.InvalidTrack);
+            }
+
+            //courseResults
+            this.courseResults = new List<ICourseResult>();
+        }
+
+        public override string ToString()
+        {
+           var result = new StringBuilder();
+
+            result.AppendLine("* Student:");
+            result.AppendLine($"- Username: {username}");
+            result.AppendLine($"- Track: {track}");
+            result.AppendLine($" Course results:");
+
+            if (courseResults.Count == 0)
+            {
+                result.AppendLine(" * User has no course results!");
+            }
+            else
+            {
+                foreach (var courseResult in CourseResults)
+                {
+                    result.AppendLine(courseResult.ToString());
+                }
+            }
+
+            return result.ToString();
         }
     }
 }

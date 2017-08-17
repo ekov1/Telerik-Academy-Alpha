@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Academy.Models.Contracts;
+using Academy.Models.Exceptions;
 
 namespace Academy.Models
 {
@@ -24,16 +25,28 @@ namespace Academy.Models
             set { this.username = value; }
         }
 
-        public override string ToString()
-        {
-            throw new NotImplementedException();
-        }
-
         public Trainer(string username, string technologies)
         {
-            this.Username = username;
+            //username
+            if (string.IsNullOrEmpty(username) || username.Length < 2 || username.Length > 17)
+            {
+                throw new ArgumentException(ExceptionMessages.Username);
+            }
+            this.username = username;
 
-            this.Technologies = new List<string>();
+            //technologies
+            this.technologies = technologies.Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries).ToList();
+        }
+
+        public override string ToString()
+        {
+            var result = new StringBuilder();
+
+            result.AppendLine("* Trainer:");
+            result.AppendLine($" - Username: {username}");
+            result.Append($"Technologies: {string.Join("; ", technologies)}");
+
+            return result.ToString();
         }
     }
 }

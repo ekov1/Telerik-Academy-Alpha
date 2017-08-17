@@ -1,10 +1,12 @@
 ﻿using System;
+using System.CodeDom;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
 using Academy.Models.Contracts;
+using Academy.Models.Exceptions;
 
 namespace Academy.Models
 {
@@ -39,7 +41,7 @@ namespace Academy.Models
         public DateTime EndingDate
         {
             get { return this.endingDate; }
-            set { this.endingDate = value; }
+            set { this.endingDate = value.AddDays(30); }
         }
 
         public IList<IStudent> OnsiteStudents
@@ -62,14 +64,58 @@ namespace Academy.Models
 
         public Course(string name, string lecturesPerWeek, string startingDate)
         {
-            this.Name = name;
-            this.LecturesPerWeek = int.Parse(lecturesPerWeek);
-            this.StartingDate = DateTime.Parse(startingDate);
+            //name
+            if (name.Length < 3 || name.Length > 45)
+            {
+                throw new ArgumentException(ExceptionMessages.CourseLength);
+            }
+            this.name = name;
+
+            //lecturesPerWeek
+            int value;
+            bool successfullyParsed = int.TryParse(lecturesPerWeek, out value);
+            if (successfullyParsed && value >= 1 && value <= 7)
+            {
+                this.lecturesPerWeek = value;
+            }
+            else
+            {
+                throw new ArgumentException(ExceptionMessages.LecturesPerWeek);
+            }
+
+            //startingDate
+            this.startingDate = DateTime.Parse(startingDate);
+
+            //endingDate
+            this.endingDate = DateTime.Parse(startingDate).AddDays(30);
+
+            //lectures
+            this.lectures = new List<ILecture>();
         }
 
         public override string ToString()
         {
-            return "xd";
+            var result = new StringBuilder();
+
+            result.AppendLine("* Course");
+            result.AppendLine($" - Name: {name}");
+            result.AppendLine($" - Lectures per week: {lecturesPerWeek}");
+            result.AppendLine($" - Starting date: {startingDate}");
+            result.AppendLine($" - Ending date: {endingDate}");
+            result.AppendLine(" - Lectures:");
+            if (lectures.Count == 0)
+            {
+                result.Append(" * There are no lectures in this course!");
+            }
+            else
+            {
+                foreach (var lecture in lectures)
+                {
+                    result.Append(lecture);
+                }
+            }
+
+            return result.ToString();
         }
     }
 }
