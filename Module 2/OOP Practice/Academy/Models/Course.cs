@@ -12,7 +12,6 @@ namespace Academy.Models
 {
     public class Course : ICourse
     {
-        private string name;
         private int lecturesPerWeek;
         private DateTime startingDate;
         private DateTime endingDate;
@@ -20,11 +19,7 @@ namespace Academy.Models
         private IList<IStudent> onlineStudents;
         private IList<ILecture> lectures;
 
-        public string Name
-        {
-            get { return this.name; }
-            set { this.name = value; }
-        }
+        public string Name { get; set; }
 
         public int LecturesPerWeek
         {
@@ -69,7 +64,7 @@ namespace Academy.Models
             {
                 throw new ArgumentException(ExceptionMessages.CourseLength);
             }
-            this.name = name;
+            this.Name = name;
 
             //lecturesPerWeek
             int value;
