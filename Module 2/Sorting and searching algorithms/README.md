@@ -11,7 +11,7 @@
     - `SortableCollection.LinearSearch()`
     - `SortableCollection.BinarySearch()`
 
-    ## Sorting Algorithms
+## Sorting Algorithms
 ### _Homework_
 - Open [project](./project) and:
 
