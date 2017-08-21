@@ -20,7 +20,7 @@ namespace Traveller.Models
 
         public decimal CalculatePrice()
         {
-            return this.AdministrativeCosts * Journey.CalculateTravelCosts();
+            return  AdministrativeCosts + Journey.CalculateTravelCosts();
         }
 
         public Ticket(IJourney journey, decimal administrativeCosts)

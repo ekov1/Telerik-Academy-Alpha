@@ -20,7 +20,7 @@ namespace Traveller.Models.Vehicles
             get { return this.passangerCapactiy; }
             set
             {   
-                Validator.ValidateCapacity("vehicle", value, 1, 800);
+                Validator.ValidateVehicaleCapacity(value);
                 this.passangerCapactiy = value;
             }
         }

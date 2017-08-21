@@ -16,6 +16,14 @@ namespace Traveller.Exceptions
             }
         }
 
+        public static void ValidateVehicaleCapacity(int capacity)
+        {
+            if (capacity < 1 || capacity > 800)
+            {
+                throw new ArgumentOutOfRangeException("A vehicle with less than 1 passengers or more than 800 passengers cannot exist!");
+            }
+        }
+
         public static void ValidateCarts(int cartsNumber)
         {
             if (cartsNumber < 1 || cartsNumber > 15)

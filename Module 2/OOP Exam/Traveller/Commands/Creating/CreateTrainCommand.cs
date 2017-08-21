@@ -6,18 +6,11 @@ using Traveller.Models.Vehicles.Contracts;
 
 namespace Traveller.Commands.Creating
 {
-    public class CreateTrainCommand : ICommand
+    public class CreateTrainCommand : CreateVehicleCommand
     {
-        private readonly ITravellerFactory factory;
-        private readonly IEngine engine;
+        public CreateTrainCommand(ITravellerFactory factory, IEngine engine) : base(factory, engine) { }
 
-        public CreateTrainCommand(ITravellerFactory factory, IEngine engine)
-        {
-            this.factory = factory;
-            this.engine = engine;
-        }
-
-        public string Execute(IList<string> parameters)
+        public override string Execute(IList<string> parameters)
         {
             int passengerCapacity;
             decimal pricePerKilometer;
@@ -34,10 +27,10 @@ namespace Traveller.Commands.Creating
                 throw new ArgumentException("Failed to parse CreateTrain command parameters.");
             }
 
-            var train = this.factory.CreateTrain(passengerCapacity, pricePerKilometer, cars);
-            this.engine.Vehicles.Add(train as IVehicle);
+            var train = this.Factory.CreateTrain(passengerCapacity, pricePerKilometer, cars);
+            this.Engine.Vehicles.Add(train as IVehicle);
 
-            return $"Vehicle with ID {engine.Vehicles.Count - 1} was created.";
+            return $"Vehicle with ID {Engine.Vehicles.Count - 1} was created.";
         }
     }
 }

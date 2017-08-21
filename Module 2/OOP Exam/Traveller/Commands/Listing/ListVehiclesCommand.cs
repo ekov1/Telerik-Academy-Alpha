@@ -1,10 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using Traveller.Commands.Contracts;
 using Traveller.Core.Contracts;
 
 namespace Traveller.Commands.Creating
 {
-    public class ListVehiclesCommand
+    public class ListVehiclesCommand : ICommand
     {
         private readonly ITravellerFactory factory;
         private readonly IEngine engine;
@@ -21,7 +22,7 @@ namespace Traveller.Commands.Creating
 
             if (vehicles.Count == 0)
             {
-                return "There are no registered tickets.";
+                return "There are no registered vehicles.";
             }
 
             return string.Join(Environment.NewLine + "####################" + Environment.NewLine, vehicles);
