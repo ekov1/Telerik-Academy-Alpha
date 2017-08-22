@@ -10,8 +10,6 @@
 
 <div id="readme" class="readme boxed-group clearfix announce instapaper_body md">
 
-### <span class="octicon octicon-book"></span>Player ranking
-
 <article class="markdown-body entry-content" itemprop="text" id="grip-content">
 
 # [<span aria-hidden="true" class="octicon octicon-link"></span>](#player-ranking)Player ranking
