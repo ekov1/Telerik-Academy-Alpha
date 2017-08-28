@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -57,18 +58,58 @@ namespace Units_Of_Work
 
             return result;
         }
+
+        public override string ToString()
+        {
+            return string.Format("{0}[{1}]({2})", name, type, attack);
+        }
     }
 
     public class Units
     {
-        private new Dictionary<string, SortedSet<Unit>> sortedUnits = new Dictionary<string, SortedSet<Unit>>();
-        private BigList<Unit> unitsList = new BigList<Unit>();
+        private Dictionary<string, SortedSet<Unit>> sortedUnitsByType = new Dictionary<string, SortedSet<Unit>>();
+        private Dictionary<string, Unit> units = new Dictionary<string, Unit>();
+        private Dictionary<int, SortedSet<Unit>> sortedUnitsByPower = new Dictionary<int, SortedSet<Unit>>();
 
         public void AddUnit(string unitName, string unitType, int unitAttack)
         {
             var unit = new Unit(unitName, unitType, unitAttack);
 
+            if (sortedUnitsByType.ContainsKey(unitName))
+            {
+                throw new ArgumentException("FAIL: {0} already exists!", unitName);
+            }
+            Console.WriteLine("SUCCESS: {0} added!", unitName);
+            units.Add(unitName, unit);
 
+            if (!sortedUnitsByType.ContainsKey(unitType))
+            {
+                sortedUnitsByType.Add(unitType, new SortedSet<Unit>());
+            }
+            sortedUnitsByType[unitType].Add(unit);
+
+            if (!sortedUnitsByPower.ContainsKey(unitAttack))
+            {
+                sortedUnitsByPower.Add(unitAttack, new SortedSet<Unit>());
+            }
+            sortedUnitsByPower[unitAttack].Add(unit);
+        }
+
+        public void FindUnitPower(int unitAttack)
+        {
+            
+        }
+
+        public void FindUnitType(string unitType)
+        {
+            if (sortedUnitsByType.ContainsKey(unitType))
+            {
+                Console.WriteLine("RESULT: {0}", string.Join(", ", sortedUnitsByType[unitType]));
+            }
+            else
+            {
+                Console.WriteLine("RESULT: ");
+            }
         }
     }
 }
