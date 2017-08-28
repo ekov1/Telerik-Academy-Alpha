@@ -11,7 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gold fever", "Gold fever\Go
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Conference", "Conference\Conference.csproj", "{320260AC-474D-4B24-89F5-E549980671F4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Units Of Work", "Units Of Work\Units Of Work.csproj", "{89ABFAEF-2BB8-4AE0-BCA0-0B32C9DDF826}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitsOfWork", "UnitsOfWork\UnitsOfWork.csproj", "{3CD4CF96-8625-463E-B217-08E67D47CA4F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -35,10 +35,10 @@ Global
 		{320260AC-474D-4B24-89F5-E549980671F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{320260AC-474D-4B24-89F5-E549980671F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{320260AC-474D-4B24-89F5-E549980671F4}.Release|Any CPU.Build.0 = Release|Any CPU
-		{89ABFAEF-2BB8-4AE0-BCA0-0B32C9DDF826}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{89ABFAEF-2BB8-4AE0-BCA0-0B32C9DDF826}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{89ABFAEF-2BB8-4AE0-BCA0-0B32C9DDF826}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{89ABFAEF-2BB8-4AE0-BCA0-0B32C9DDF826}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3CD4CF96-8625-463E-B217-08E67D47CA4F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3CD4CF96-8625-463E-B217-08E67D47CA4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3CD4CF96-8625-463E-B217-08E67D47CA4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3CD4CF96-8625-463E-B217-08E67D47CA4F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
