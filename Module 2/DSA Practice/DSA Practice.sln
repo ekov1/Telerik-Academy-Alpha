@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Conference", "Conference\Co
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitsOfWork", "UnitsOfWork\UnitsOfWork.csproj", "{3CD4CF96-8625-463E-B217-08E67D47CA4F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "A box full of balls", "A box full of balls\A box full of balls.csproj", "{B4E10640-1A83-4354-8FCE-0E2014BF3249}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{3CD4CF96-8625-463E-B217-08E67D47CA4F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3CD4CF96-8625-463E-B217-08E67D47CA4F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3CD4CF96-8625-463E-B217-08E67D47CA4F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B4E10640-1A83-4354-8FCE-0E2014BF3249}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4E10640-1A83-4354-8FCE-0E2014BF3249}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4E10640-1A83-4354-8FCE-0E2014BF3249}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4E10640-1A83-4354-8FCE-0E2014BF3249}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
