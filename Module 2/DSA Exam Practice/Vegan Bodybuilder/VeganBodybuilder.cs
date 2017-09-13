@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -9,45 +8,75 @@ namespace Vegan_Bodybuilder
 {
     public class VeganBodybuilder
     {
-        public static Dictionary<int[], int> KSmem = new Dictionary<int[], int>();
-        public static List<int[]> foodMenu = new List<int[]>();
+        private static int maxWeight;
+        private static int numberOfChoices;
+        private static List<int[]> choicesStats;
+        private static List<string> choicesName;
+        private static List<string> optimalChoices;
 
-        public static void Main(string[] args)
+        public static void Main()
         {
-            var M = int.Parse(Console.ReadLine());
-            var N = int.Parse(Console.ReadLine());
-
-            for (int i = 0; i < N; i++)
+             maxWeight = int.Parse(Console.ReadLine());
+             numberOfChoices = int.Parse(Console.ReadLine());
+             choicesStats = new List<int[]>();
+             choicesName = new List<string>();
+             optimalChoices = new List<string>();
+               
+            for (int i = 0; i < numberOfChoices; i++)
             {
-                foodMenu.Add(Console.ReadLine().Split().Skip(1).Select(int.Parse).ToArray());
+                var choicesTokens = Console.ReadLine().Split(' ');
+                choicesStats.Add(choicesTokens.Skip(1).Select(int.Parse).ToArray());
+                choicesName.Add(choicesTokens.First());
             }
 
+            var currentChoice = numberOfChoices - 1;
 
-            KS(N, M);
+            var optimalValue = Knapsack(currentChoice, maxWeight);
+
+            Console.WriteLine(optimalValue);
+
+            var k = 1;
+
+            for (int i = optimalChoices.Count - 1; i >= 0; i--)
+            {
+                optimalValue -= choicesStats[choicesStats.Count - k][1];
+                k++;
+
+                if (optimalValue < 0)
+                {
+                    break;
+                }
+
+                Console.WriteLine(optimalChoices[i]);
+            }
         }
 
-        public static int KS(int n, int c)
+        private static int Knapsack(int currentChoice, int capacityLeft)
         {
-            if (KSmem.ContainsKey(new[] {n, c}))
+            int result;
+
+            if (currentChoice <= 0 || capacityLeft <= 0)
             {
-                return KSmem[new[] {n, c}];
+                return 0;
             }
 
-            int result;
-            if (n == 0 || c == 0)
+            var weight = choicesStats[currentChoice][0];
+            var value = choicesStats[currentChoice][1];
+
+            if (weight > capacityLeft)
             {
-                result = 0;
-            } 
-            else if (foodMenu[n][0] > c)
-            {
-                result = KS(n - 1, c);
+                result = Knapsack(currentChoice - 1, capacityLeft);
             }
             else
             {
-                var tempOne = KS(n - 1, c);
-                var tempTwo = foodMenu[n][1];
-
+                var tempOne = Knapsack(currentChoice - 1, capacityLeft);
+                var tempTwo = value + Knapsack(currentChoice - 1, capacityLeft - weight);
                 result = new [] {tempOne, tempTwo}.Max();
+
+                if (tempTwo > tempOne)
+                {
+                    optimalChoices.Add(choicesName[currentChoice]);
+                }
             }
 
             return result;
