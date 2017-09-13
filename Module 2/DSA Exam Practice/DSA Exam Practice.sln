@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Orders System", "Orders Sys
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vegan Bodybuilder", "Vegan Bodybuilder\Vegan Bodybuilder.csproj", "{FE4DF0F9-037E-4043-943E-65C91B347FCE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dog loves paper", "Dog loves paper\Dog loves paper.csproj", "{C6A2A2C4-7684-449A-B8E4-08EA7A663541}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{FE4DF0F9-037E-4043-943E-65C91B347FCE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FE4DF0F9-037E-4043-943E-65C91B347FCE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FE4DF0F9-037E-4043-943E-65C91B347FCE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C6A2A2C4-7684-449A-B8E4-08EA7A663541}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6A2A2C4-7684-449A-B8E4-08EA7A663541}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6A2A2C4-7684-449A-B8E4-08EA7A663541}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6A2A2C4-7684-449A-B8E4-08EA7A663541}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
