@@ -10,6 +10,15 @@ namespace Students_and_courses
     {
         public static void Main(string[] args)
         {
+            var student = new Student("Icka", 23423432);
+            var course = new Course();
+
+            for (int i = 0; i < 31; i++)
+            {
+                course.Add(student);
+            }
+
+            Console.WriteLine(course.ToString());
         }
     }
 }

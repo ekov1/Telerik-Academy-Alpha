@@ -3,17 +3,29 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Students_and_courses.Interfaces;
 
 namespace Students_and_courses
 {
-    public class Student
+    public class Student : IStudent
     {
-        private string name;
-        private decimal id;
+        public string Name { get; }
+        public int Id { get; }
 
-        public string Name
+        public Student(string name, int id)
         {
-            get { return this}
+            this.Name = name;
+            this.Id = id;
+        }
+
+        public override string ToString()
+        {
+            var result = new StringBuilder();
+
+            result.AppendLine($"Name: {Name}");
+            result.Append($"Id: {Id}");
+
+            return result.ToString();
         }
     }
 }
