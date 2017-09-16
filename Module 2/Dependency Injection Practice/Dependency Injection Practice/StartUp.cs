@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Dependency_Injection_Practice
 {
-    public class NonContainer
+    public class StartUp
     {
         public static void Main()
         {
