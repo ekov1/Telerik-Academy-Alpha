@@ -10,39 +10,24 @@ namespace Academy.Core
 {
     public class Engine : IEngine
     {
-        private static IEngine instanceHolder = new Engine();
-
         private const string TerminationCommand = "Exit";
         private const string NullProvidersExceptionMessage = "cannot be null.";
         private readonly StringBuilder builder = new StringBuilder();
 
-        // private because of Singleton design pattern
-        private Engine()
+        private readonly IReader reader;
+        private readonly IWriter writer;
+        private readonly IParser parser;
+
+        public Engine(IReader reader, IWriter writer, IParser parser)
         {
-            this.Reader = new ConsoleReader();
-            this.Writer = new ConsoleWriter();
-            this.Parser = new CommandParser();
+            this.reader= reader ?? throw new ArgumentException("reader");
+            this.writer = writer ?? throw new ArgumentException("writer");
+            this.parser = parser ?? throw new ArgumentException("writer");
 
             this.Seasons = new List<ISeason>();
             this.Students = new List<IStudent>();
             this.Trainers = new List<ITrainer>();
         }
-
-        public static IEngine Instance
-        {
-            get
-            {
-                return instanceHolder;
-            }
-        }
-
-        // Property dependencty injection not validated for simplicity
-        public IReader Reader { get; set; }
-
-        public IWriter Writer { get; set; }
-
-        public IParser Parser { get; set; }
-
 
         public IList<ISeason> Seasons { get; private set; }
 
@@ -57,11 +42,11 @@ namespace Academy.Core
             {
                 try
                 {
-                    var commandAsString = this.Reader.ReadLine();
+                    var commandAsString = this.reader.ReadLine();
 
                     if (commandAsString == TerminationCommand)
                     {
-                        this.Writer.Write(this.builder.ToString());
+                        this.writer.Write(this.builder.ToString());
                         break;
                     }
 
@@ -85,8 +70,8 @@ namespace Academy.Core
                 throw new ArgumentNullException("Command cannot be null or empty.");
             }
 
-            var command = this.Parser.ParseCommand(commandAsString);
-            var parameters = this.Parser.ParseParameters(commandAsString);
+            var command = this.parser.ParseCommand(commandAsString);
+            var parameters = this.parser.ParseParameters(commandAsString);
 
             var executionResult = command.Execute(parameters);
             this.builder.AppendLine(executionResult);
