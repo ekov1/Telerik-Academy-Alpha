@@ -10,7 +10,7 @@ using Moq;
 namespace Academy.UnitTests.Core.EngineTests
 {
     [TestClass]
-    public class Start_Should
+    public class StartTest
     {
         [TestMethod]
         public void CallWriterWriteMethodWithCommandsResults_WhenInputIsCorrect()

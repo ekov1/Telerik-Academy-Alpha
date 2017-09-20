@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using Academy.Commands.Creating;
 using Academy.Core.Contracts;
@@ -51,6 +50,51 @@ namespace Academy.UnitTests.Commands.Creating.CreateCourseCommandTests
 
             // Assert
             Assert.AreEqual(1, secondSeasonMock.Object.Courses.Count);
+            Assert.AreSame(courseMock.Object, secondSeasonMock.Object.Courses.Single());
+        }
+
+        [TestMethod]
+        public void ReturnText_WhenParametersAreCorrect()
+        {
+            // Arrange
+            var factoryMock = new Mock<IAcademyFactory>();
+            var engineMock = new Mock<IEngine>();
+            var firstSeasonMock = new Mock<ISeason>();
+            var secondSeasonMock = new Mock<ISeason>();
+            var courseMock = new Mock<ICourse>();
+            List<ISeason> seasons = new List<ISeason>
+                {firstSeasonMock.Object, secondSeasonMock.Object};
+            List<ICourse> courses = new List<ICourse>();
+
+            string seasonId = "1";
+            string courseName = "JavaScriptOOP";
+            string lecturesPerWeek = "2";
+            string startingDate = "2017-01-24";
+
+            string expectedResult = $"Course with ID 0 was created in Season {seasonId}.";
+
+            engineMock.SetupGet(m => m.Seasons).Returns(seasons);
+            factoryMock
+                .Setup(m => m.CreateCourse(courseName, lecturesPerWeek, startingDate))
+                .Returns(courseMock.Object);
+
+            secondSeasonMock.SetupGet(m => m.Courses).Returns(courses);
+
+            List<string> parameters = new List<string>
+            {
+                seasonId,
+                courseName,
+                lecturesPerWeek,
+                startingDate
+            };
+
+            CreateCourseCommand command = new CreateCourseCommand(factoryMock.Object, engineMock.Object);
+
+            // Act
+            var result = command.Execute(parameters);
+
+            // Assert
+            Assert.AreEqual(expectedResult, result);
             Assert.AreSame(courseMock.Object, secondSeasonMock.Object.Courses.Single());
         }
     }
