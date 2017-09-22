@@ -56,5 +56,11 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Dependency Injection Practice\Dependency Injection Practice.csproj">
+      <Project>{e55257a9-5537-497c-b6c4-6c2ca189dad3}</Project>
+      <Name>Dependency Injection Practice</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
