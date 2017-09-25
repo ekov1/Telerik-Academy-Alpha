@@ -23,17 +23,9 @@ namespace Academy.Core
             this.reader= reader ?? throw new ArgumentException("reader");
             this.writer = writer ?? throw new ArgumentException("writer");
             this.parser = parser ?? throw new ArgumentException("writer");
-
-            this.Seasons = new List<ISeason>();
-            this.Students = new List<IStudent>();
-            this.Trainers = new List<ITrainer>();
         }
 
-        public IList<ISeason> Seasons { get; private set; }
 
-        public IList<IStudent> Students { get; private set; }
-
-        public IList<ITrainer> Trainers { get; private set; }
 
 
         public void Start()
@@ -46,6 +38,10 @@ namespace Academy.Core
 
                     if (commandAsString == TerminationCommand)
                     {
+                        this.writer.Write(this.builder.ToString());
+                        this.writer.Write(this.builder.ToString());
+                        this.writer.Write(this.builder.ToString());
+                        this.writer.Write(this.builder.ToString());
                         this.writer.Write(this.builder.ToString());
                         break;
                     }

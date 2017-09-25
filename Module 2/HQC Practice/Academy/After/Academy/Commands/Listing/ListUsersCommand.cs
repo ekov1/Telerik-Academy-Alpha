@@ -10,18 +10,20 @@ namespace Academy.Commands.Listing
     {
         private readonly IAcademyFactory factory;
         private readonly IEngine engine;
+        private readonly IDatabase database;
 
-        public ListUsersCommand(IAcademyFactory factory, IEngine engine)
+        public ListUsersCommand(IAcademyFactory factory, IEngine engine, IDatabase database)
         {
             this.factory = factory;
             this.engine = engine;
+            this.database = database;
         }
 
         public string Execute(IList<string> parameters)
         {
             var builder = new StringBuilder();
-            var trainers = this.engine.Trainers;
-            var students = this.engine.Students;
+            var trainers = this.database.Trainers;
+            var students = this.database.Students;
 
             if (trainers.Any())
             {
