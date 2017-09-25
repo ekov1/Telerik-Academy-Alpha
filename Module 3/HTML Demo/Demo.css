@@ -1,0 +1,9 @@
+.divs {
+    background-color: lightgreen;
+    color: white;
+}
+
+#content {
+    font-weight: bold;
+    margin-top: 20px;
+}
