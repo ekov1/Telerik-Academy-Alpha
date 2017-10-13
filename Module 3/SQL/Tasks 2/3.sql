@@ -4,3 +4,4 @@ JOIN Departments d
 ON e.DepartmentID = d.DepartmentID
 WHERE Salary = (SELECT MIN(Salary) FROM Employees k
 				WHERE k.DepartmentID = e.DepartmentID)
+ORDER BY Salary ASC

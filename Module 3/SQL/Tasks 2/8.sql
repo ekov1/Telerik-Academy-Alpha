@@ -1,0 +1,1 @@
+SELECT SUM(CASE WHEN ManagerID IS NULL THEN 1 END) AS EmployeesWithoutManagers FROM Employees e

@@ -1,0 +1,1 @@
+SELECT COUNT(ManagerID) AS EmployeesWithoutManagers FROM Employees e
