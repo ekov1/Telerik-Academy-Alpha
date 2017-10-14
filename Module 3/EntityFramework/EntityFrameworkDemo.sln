@@ -5,6 +5,10 @@ VisualStudioVersion = 15.0.26430.16
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Demo", "..\..\..\..\documents\visual studio 2017\Projects\EntityFrameworkDemo\Demo\Demo.csproj", "{46F8BCBC-C2DF-4B79-9A26-86EAA5D25059}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeFirst", "CodeFirst\CodeFirst.csproj", "{3CEDA3DA-F873-4061-BA69-172215E77872}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CodeFirst.Models", "CodeFirst.Models\CodeFirst.Models.csproj", "{2B267CC8-2313-485B-9569-2B5F3771895F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{46F8BCBC-C2DF-4B79-9A26-86EAA5D25059}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{46F8BCBC-C2DF-4B79-9A26-86EAA5D25059}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{46F8BCBC-C2DF-4B79-9A26-86EAA5D25059}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3CEDA3DA-F873-4061-BA69-172215E77872}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3CEDA3DA-F873-4061-BA69-172215E77872}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3CEDA3DA-F873-4061-BA69-172215E77872}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3CEDA3DA-F873-4061-BA69-172215E77872}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2B267CC8-2313-485B-9569-2B5F3771895F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B267CC8-2313-485B-9569-2B5F3771895F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B267CC8-2313-485B-9569-2B5F3771895F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B267CC8-2313-485B-9569-2B5F3771895F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
