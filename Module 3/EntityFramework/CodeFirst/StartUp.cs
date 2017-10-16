@@ -11,8 +11,11 @@ namespace CodeFirst
     {
         public static void Main()
         {
-            var db = new StudentSystemContext();
-            db.Database.CreateIfNotExists();
+            var c = "1 2 3";
+
+            var k = c.Split().Select(int.Parse).ToArray();
+
+            Console.WriteLine(string.Join("", k));
         }
     }
 }

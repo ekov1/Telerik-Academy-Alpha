@@ -53,6 +53,22 @@
     <Compile Include="Migrations\201710141932468_InitialCreate.Designer.cs">
       <DependentUpon>201710141932468_InitialCreate.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201710150910428_AddedRequiredFirstNameAndLastName.cs" />
+    <Compile Include="Migrations\201710150910428_AddedRequiredFirstNameAndLastName.Designer.cs">
+      <DependentUpon>201710150910428_AddedRequiredFirstNameAndLastName.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710150916494_AddedRequiredFirstNameAndLastName2.cs" />
+    <Compile Include="Migrations\201710150916494_AddedRequiredFirstNameAndLastName2.Designer.cs">
+      <DependentUpon>201710150916494_AddedRequiredFirstNameAndLastName2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710150948379_AddedTest.cs" />
+    <Compile Include="Migrations\201710150948379_AddedTest.Designer.cs">
+      <DependentUpon>201710150948379_AddedTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201710150950471_AddedTest2.cs" />
+    <Compile Include="Migrations\201710150950471_AddedTest2.Designer.cs">
+      <DependentUpon>201710150950471_AddedTest2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="StartUp.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -71,6 +87,18 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201710141932468_InitialCreate.resx">
       <DependentUpon>201710141932468_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710150910428_AddedRequiredFirstNameAndLastName.resx">
+      <DependentUpon>201710150910428_AddedRequiredFirstNameAndLastName.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710150916494_AddedRequiredFirstNameAndLastName2.resx">
+      <DependentUpon>201710150916494_AddedRequiredFirstNameAndLastName2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710150948379_AddedTest.resx">
+      <DependentUpon>201710150948379_AddedTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201710150950471_AddedTest2.resx">
+      <DependentUpon>201710150950471_AddedTest2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
